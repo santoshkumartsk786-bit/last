@@ -175,14 +175,14 @@ def load_models():
     """Load trained models - preprocessor created fresh"""
     try:
         # Load ML model
-        with open('sentiment_lr.pkl', 'rb') as f:
+        with open('sentiment_lr(3).pkl', 'rb') as f:
             lr_data = pickle.load(f)
             lr_model = lr_data['model']
             tfidf = lr_data['tfidf']
             label_encoder = lr_data['label_encoder']
         
         # Load sample reviews
-        with open('sample_reviews.json', 'r') as f:
+        with open('sample_reviews(3).json', 'r') as f:
             sample_reviews = json.load(f)
         
         # Create preprocessor fresh (not loaded from file)
@@ -470,4 +470,5 @@ st.markdown("""
             Logistic Regression + TF-IDF + VADER Sentiment Analysis
         </p>
     </div>
+
 """, unsafe_allow_html=True)
